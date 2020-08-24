@@ -1,5 +1,6 @@
 provider "ibm" {
   region = var.region
+  function_namespace = var.namespace
 }
 
 data "ibm_resource_group" "resource-group" {
