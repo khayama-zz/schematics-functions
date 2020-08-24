@@ -45,7 +45,7 @@ resource "ibm_function_trigger" "trigger" {
                         {
                                 "key":"event_types",
                                 "value":"write"
-                        },
+                        }
                 ]
                 EOF
   }
@@ -53,6 +53,7 @@ resource "ibm_function_trigger" "trigger" {
 
 resource "ibm_function_rule" "rule" {
   name         = var.rule_name
+  namespace = ibm_function_namespace.namespace.name
   action_name  = ibm_function_action.action.name
   trigger_name = ibm_function_trigger.trigger.name
 }
