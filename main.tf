@@ -46,10 +46,10 @@ resource "ibm_function_trigger" "trigger" {
                         {
                                 "key":"event_types",
                                 "value":"write"
-                        }
+                        },
                 ]
                 EOF
-    }
+    },
   ]
 }
 
