@@ -14,12 +14,12 @@ resource "ibm_function_namespace" "namespace" {
 
 resource "ibm_function_package" "package" {
   name      = var.package_name
-  namespace = ibm_function_namespace.namespace.name
+  namespace = var.namespace
 }
 
 resource "ibm_function_action" "action" {
   name      = var.action_name
-  namespace = ibm_function_namespace.namespace.name
+  namespace = var.namespace
 
   exec {
     kind  = "openwhisk/dockerskeleton"
@@ -29,7 +29,7 @@ resource "ibm_function_action" "action" {
 
 resource "ibm_function_trigger" "trigger" {
   name = var.trigger_name
-  namespace = ibm_function_namespace.namespace.name
+  namespace = var.namespace
   feed {
       name = "/whisk.system/cos/changes"
       parameters = <<EOF
@@ -53,7 +53,7 @@ resource "ibm_function_trigger" "trigger" {
 
 resource "ibm_function_rule" "rule" {
   name         = var.rule_name
-  namespace = ibm_function_namespace.namespace.name
+  namespace = var.namespace
   action_name  = ibm_function_action.action.name
   trigger_name = ibm_function_trigger.trigger.name
 }
