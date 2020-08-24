@@ -1,0 +1,16 @@
+{
+  "name": "khayama_schematics-fn",
+  "type": [
+    "terraform_v0.12"
+  ],
+  "tags": [
+    "owner:khayama"
+  ],
+  "template_repo": {
+    "url": "https://github.com/khayama/schematics-functions"
+  },
+  "template_data": [{
+    "folder": ".",
+    "type": "terraform_v0.12"
+  }]
+}
