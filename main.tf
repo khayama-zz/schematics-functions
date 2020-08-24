@@ -30,7 +30,7 @@ resource "ibm_function_action" "action" {
 resource "ibm_function_trigger" "trigger" {
   name = var.trigger_name
   namespace = ibm_function_namespace.namespace.name
-  feed = {
+  feed {
       name = "/whisk.system/cos/changes"
       parameters = <<EOF
                 [
