@@ -2,10 +2,6 @@ variable "region" {
   default = "jp-tok"
 }
 
-variable "ibmcloud_api_key" {
-  default = "chageme"
-}
-
 variable "resource_group" {
   default = "khayama-rg"
 }
