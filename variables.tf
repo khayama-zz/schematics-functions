@@ -2,9 +2,7 @@ variable "region" {
   default = "jp-tok"
 }
 
-variable "ibmcloud_api_key" {
-  default = ""
-}
+variable "ibmcloud_api_key" {}
 
 variable "resource_group" {
   default = "khayama-rg"
