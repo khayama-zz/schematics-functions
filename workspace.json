@@ -1,5 +1,5 @@
 {
-  "name": "khayama_schematics-fn",
+  "name": "khayama-schematics-fn",
   "type": [
     "terraform_v0.12"
   ],
