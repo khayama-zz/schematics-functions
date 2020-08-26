@@ -22,8 +22,9 @@ resource "ibm_function_action" "action" {
   name      = var.action_name
   namespace = ibm_function_namespace.namespace.name
   exec {
-    kind  = "openwhisk/dockerskeleton"
-    image = file("setCosContentType.sh")
+    kind   = "blackbox"
+    image  = "openwhisk/dockerskeleton"
+    code   = file("setCosContentType.sh")
   }
 }
 
